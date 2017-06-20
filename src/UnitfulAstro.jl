@@ -29,6 +29,7 @@ const c  = Unitful.c
 @unit   AU       "AU"       AstronomicalUnit          149_597_870_700*m         false  # cf IAU 2012
 @unit   ly       "ly"       LightYear                 1*c*yr                    false
 @unit   pc       "pc"       Parsec                    1*AU/arcsec               true   # cf IAU 2015
+# Note that IAU 2015 defines the small angle approximation as exact in the definition of the parsec.
 @unit   Jy       "Jy"       Jansky            (1//10^23)*erg*s^-1*cm^-2*Hz^-1   true
 
 # SOLAR CONVERSION CONSTANTS (IAU 2015)
@@ -50,6 +51,8 @@ const c  = Unitful.c
 @unit   Mjup     "Mjup"     JupiterMass               1*GMjup/G                 false
 @unit   Rearth   "Rearth"   EarthRadius               1*Rearth_e                false
 @unit   Rjup     "Rjup"     JupiterRadius             1*Rjup_e                  false
+# Note that IAU 2015 states that when the radius is not specified as polar or equatorial, the
+# equatorial radius should be used.
 
 const localunits = Unitful.basefactors
 function __init__()
