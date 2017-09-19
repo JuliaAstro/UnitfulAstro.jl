@@ -12,10 +12,10 @@ macro import_from_unitful(args...)
         if use_SI_prefixes
             for prefix in Unitful.si_prefixes
                 sym′ = Symbol(prefix, sym)
-                push!(expr.args, :(const $(esc(sym′)) = Unitful.$sym′))
+                push!(expr.args, :(import Unitful.$sym′))
             end
         else
-            push!(expr.args, :(const $(esc(sym)) = Unitful.$sym))
+            push!(expr.args, :(import Unitful.$sym))
         end
     end
     expr
