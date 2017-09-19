@@ -11,10 +11,9 @@ git:
     depth: 99999999
 allow_failures:
     - julia: nightly
-#script:
-#    - julia -e 'Pkg.clone(pwd()); Pkg.build("UnitfulAstro"); Pkg.test("UnitfulAstro"; coverage=true)'
-#after_success:
-#    # push coverage results to Coveralls
-#    - julia -e 'cd(Pkg.dir("UnitfulAstro")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
-#    # push coverage results to Codecov
-#    - julia -e 'cd(Pkg.dir("UnitfulAstro")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
+after_success:
+    - >-
+        if [[ "$TRAVIS_OS_NAME" == "linux" && "$TRAVIS_JULIA_VERSION" == "0.6" ]];
+            julia -e 'Pkg.add("Documenter")';
+            julia -e 'cd(Pkg.dir("UnitfulAstro")); include(joinpath("docs", "make.jl"))'
+        fi
