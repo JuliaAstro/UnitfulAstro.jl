@@ -44,7 +44,7 @@ should_we_use_SI_prefixes(arg::Symbol) = false, arg
 @unit dyn        "dyn"      Dyne                      (1//10^5)*N               false
 @unit arcmin     "arcmin"   ArcMinute                 (1//60)*°                 false
 @unit arcsec     "arcsec"   ArcSecond                 (1//3600)*°               false
-@unit yr         "yr"       JulianYear                86_400*s                  true
+@unit yr         "yr"       JulianYear                365.25*d                  true
 @unit AU         "AU"       AstronomicalUnit          149_597_870_700*m         false  # cf IAU 2012
 @unit ly         "ly"       LightYear                 1*c*yr                    false
 @unit pc         "pc"       Parsec                    1*AU/arcsec               true   # cf IAU 2015
