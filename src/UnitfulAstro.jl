@@ -45,7 +45,7 @@ should_we_use_SI_prefixes(arg::Symbol) = false, arg
 @unit arcmin     "arcmin"   ArcMinute                 (1//60)*°                 false
 @unit arcsec     "arcsec"   ArcSecond                 (1//3600)*°               false
 @unit yr         "yr"       JulianYear                365.25*d                  true
-@unit AU         "AU"       AstronomicalUnit          149_597_870_700*m         false  # cf IAU 2012
+@unit AU         "AU"       AstronomicalUnit          149_597_870_700.0*m       false  # cf IAU 2012
 @unit ly         "ly"       LightYear                 1*c*yr                    false
 @unit pc         "pc"       Parsec                    1*AU/arcsec               true   # cf IAU 2015
 # Note that IAU 2015 defines the small angle approximation as exact in the definition of the parsec.
@@ -54,7 +54,7 @@ should_we_use_SI_prefixes(arg::Symbol) = false, arg
 
 # SOLAR CONVERSION CONSTANTS (IAU 2015)
 @unit Rsun       "R⊙"       SolarRadius               6.957e8*m                 false
-@unit Ssun       "S⊙"       SolarIrradiance           1361*W*m^-2               false
+@unit Ssun       "S⊙"       SolarIrradiance           1361.0*W*m^-2             false
 @unit Lsun       "L⊙"       SolarLuminosity           3.828e26*W                false
 # TODO solar effective temperature
 @unit GMsun      "GM⊙"      GSolarMass                1.327_124_4e20*m^3*s^-2   false
