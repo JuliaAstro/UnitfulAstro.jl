@@ -3,6 +3,14 @@
 UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) to include
 units commonly encountered in astronomy.
 
+[![Build Status](https://travis-ci.org/mweastwood/UnitfulAstro.jl.svg?branch=master)](https://travis-ci.org/mweastwood/UnitfulAstro.jl)
+
+**Author:** Michael Eastwood
+
+**License:** MIT "Expat"
+
+## Summary of Units
+
 The list of additional units is given below:
 
 * [Erg](https://en.wikipedia.org/wiki/Erg)
@@ -28,9 +36,4 @@ Where applicable, all units are defined by the IAU standard.
 [1]: gravitational constant times mass also given
 
 [2]: polar and equatorial radii
-
-
-**Author:** Michael Eastwood
-
-**License:** MIT "Expat"
 
