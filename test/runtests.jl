@@ -7,12 +7,12 @@ const u = UnitfulAstro
     @testset "unit tests" begin
         @test 10^7*u.erg == 1*u.J
         @test 10^5*u.dyn == 1*u.N
-        @test 60*u.arcmin == 1*u.°
-        @test 60*u.arcsec == 1*u.arcmin
-        @test 3600*u.arcsec == 1*u.°
+        @test 60*u.arcminute == 1*u.°
+        @test 60*u.arcsecond == 1*u.arcminute
+        @test 3600*u.arcsecond == 1*u.°
         @test 365.25*u.d == 1*u.yr
         @test 1*u.ly == 1*u.c*u.yr
-        @test 1*u.pc == 1*u.AU/u.arcsec
+        @test 1*u.pc == 1*u.AU/u.arcsecond
         @test 1*u.SFU ≈ 10000*u.Jy
         @test 1*u.TECU == 1e12*u.cm^-2
     end

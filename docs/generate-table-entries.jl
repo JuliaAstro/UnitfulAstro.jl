@@ -4,8 +4,8 @@ using Unitful, UnitfulAstro
 
 table = (("Erg", :erg, :J),
          ("Dyne", :dyn, :N),
-         ("Arc minute", :arcmin, :°),
-         ("Arc second", :arcsec, :°),
+         ("Arcminute", :arcminute, :°),
+         ("Arcsecond", :arcsecond, :°),
          ("Julian year", :yr, :d),
          ("Astronomical unit", :AU, :cm),
          ("Light year", :ly, :cm),

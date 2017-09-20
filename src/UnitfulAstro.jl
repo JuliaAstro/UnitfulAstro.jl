@@ -40,14 +40,14 @@ should_we_use_SI_prefixes(arg::Symbol) = false, arg
 @import_from_unitful q c0 c μ0 µ0 ε0 ϵ0 Z0 G gn ge h ħ Φ0 me mn mp μB µB Na R k σ
 @import_from_unitful inch ft yd mi ac lb oz dr gr lbf
 
+import UnitfulAngles: arcminute, arcsecond
+
 @unit erg        "erg"      Erg                       (1//10^7)*J               false
 @unit dyn        "dyn"      Dyne                      (1//10^5)*N               false
-@unit arcmin     "arcmin"   ArcMinute                 (1//60)*°                 false
-@unit arcsec     "arcsec"   ArcSecond                 (1//3600)*°               false
 @unit yr         "yr"       JulianYear                365.25*d                  true
 @unit AU         "AU"       AstronomicalUnit          149_597_870_700.0*m       false  # cf IAU 2012
 @unit ly         "ly"       LightYear                 1*c*yr                    false
-@unit pc         "pc"       Parsec                    1*AU/arcsec               true   # cf IAU 2015
+@unit pc         "pc"       Parsec                    1*AU/arcsecond            true   # cf IAU 2015
 # Note that IAU 2015 defines the small angle approximation as exact in the definition of the parsec.
 @unit Jy         "Jy"       Jansky                    1e-23erg*s^-1*cm^-2*Hz^-1 true
 # Note that Jy uses a Float64 conversion factor because 10^23 overflows Int64.
