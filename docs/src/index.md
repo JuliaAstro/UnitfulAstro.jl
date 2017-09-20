@@ -33,6 +33,8 @@ The list of additional units is given below:
 |              Jupiter radius |     `UnitfulAstro.Rjup` |                  `7.1492e9 cm` |
 |            G × Jupiter mass |    `UnitfulAstro.GMjup` |        `1.2668653e17 m^3 s^-2` |
 |                Jupiter mass |     `UnitfulAstro.Mjup` |      `1.8981871658715508e30 g` |
+|             Solar flux unit |      `UnitfulAstro.SFU` |                    `10//1 kJy` |
+| Total electron content unit |     `UnitfulAstro.TECU` |                 `1.0e12 cm^-2` |
 
 ## Examples
 

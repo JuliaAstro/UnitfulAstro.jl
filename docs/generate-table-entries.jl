@@ -1,3 +1,5 @@
+#!/usr/bin/env julia
+
 using Unitful, UnitfulAstro
 
 table = (("Erg", :erg, :J),
@@ -23,7 +25,9 @@ table = (("Erg", :erg, :J),
          ("Jupiter radius (polar)", :Rjup_p, :cm),
          ("Jupiter radius", :Rjup, :cm),
          ("G × Jupiter mass", :GMjup, u"m^3/s^2"),
-         ("Jupiter mass", :Mjup, :g))
+         ("Jupiter mass", :Mjup, :g),
+         ("Solar flux unit", :SFU, :kJy),
+         ("Total electron content unit", :TECU, u"cm^-2"))
 
 column1 = String[]
 column2 = String[]

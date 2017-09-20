@@ -74,6 +74,13 @@ should_we_use_SI_prefixes(arg::Symbol) = false, arg
 # Note that IAU 2015 states that when the radius is not specified as polar or equatorial, the
 # equatorial radius should be used.
 
+# Solar flux unit
+# https://en.wikipedia.org/wiki/Solar_flux_unit
+@unit SFU        "SFU"      SolarFluxUnit             10*kJy                    false
+
+# Total electron content unit (used for ionospheric physics and low-frequency radio astronomy)
+@unit TECU       "TECU"     TotalElectronContentUnit  1e16*m^-2                 false
+
 const localunits = Unitful.basefactors
 function __init__()
     merge!(Unitful.basefactors, localunits)

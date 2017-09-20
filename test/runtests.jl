@@ -13,7 +13,14 @@ const u = UnitfulAstro
         @test 365.25*u.d == 1*u.yr
         @test 1*u.ly == 1*u.c*u.yr
         @test 1*u.pc == 1*u.AU/u.arcsec
+        @test 1*u.SFU ≈ 10000*u.Jy
+        @test 1*u.TECU == 1e12*u.cm^-2
+    end
+
+    @testset "simple calculations" begin
+        # gravitational acceleration at Earth's surface
         @test isapprox(1*u.GMearth/u.Rearth^2, 1*u.gn, atol=0.001*u.gn)
+        # Solar flux at Earth's surface
         @test isapprox(1*u.Lsun/(4π*u.AU^2), 1*u.Ssun, atol=0.001*u.Ssun)
     end
 end
