@@ -10,6 +10,8 @@ units commonly encountered in astronomy.
 
 **License:** MIT "Expat"
 
+**Documentation:** http://juliaastro.github.io/UnitfulAstro.jl/stable
+
 ## Summary of Units
 
 The list of additional units is given below:
