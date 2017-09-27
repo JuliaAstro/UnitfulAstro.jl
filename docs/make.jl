@@ -13,7 +13,7 @@ makedocs(
 )
 
 deploydocs(
-    repo = "github.com/mweastwood/UnitfulAstro.jl.git",
+    repo = "github.com/JuliaAstro/UnitfulAstro.jl.git",
     julia = "0.6",
     osname = "linux",
     target = "build",
