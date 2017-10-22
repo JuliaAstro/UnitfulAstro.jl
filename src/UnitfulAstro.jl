@@ -82,6 +82,10 @@ import UnitfulAngles: arcminute, arcsecond
 # Total electron content unit (used for ionospheric physics and low-frequency radio astronomy)
 @unit TECU       "TECU"     TotalElectronContentUnit  1e16*m^-2                 false
 
+# Experimental support for magnitudes
+Unitful.@logscale mag    "mag"      Magnitude    10    -2.5    false
+Unitful.@logunit  mag_AB "magᴬᴮ"    Magnitude    3631Jy
+
 const localunits = Unitful.basefactors
 function __init__()
     merge!(Unitful.basefactors, localunits)

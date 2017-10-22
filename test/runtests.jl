@@ -24,5 +24,9 @@ const u = UnitfulAstro
         # Solar flux at Earth's surface
         @test isapprox(1*u.Lsun/(4π*u.AU^2), 1*u.Ssun, atol=0.001*u.Ssun)
     end
+
+    @testset "magnitudes" begin
+        @test 3631*u.Jy == 1*u.mag_AB
+    end
 end
 
