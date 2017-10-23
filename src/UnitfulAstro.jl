@@ -83,8 +83,17 @@ import UnitfulAngles: arcminute, arcsecond
 @unit TECU       "TECU"     TotalElectronContentUnit  1e16*m^-2                 false
 
 # Experimental support for magnitudes
-Unitful.@logscale mag    "mag"      Magnitude    10    -2.5    false
-Unitful.@logunit  mag_AB "magᴬᴮ"    Magnitude    3631Jy
+# ===================================
+# Note that we will use the convention that "mag" refers to an apparent magnitude and "Mag" refers
+# to an absolute magnitude.
+Unitful.@logscale mag     "mag"      Magnitude    10    -2.5    false
+
+# AB Magnitudes
+Unitful.@logunit  mag_AB  "magᴬᴮ"    Magnitude    3631Jy
+
+# Bolometric magnitudes (cf IAU 2015)
+Unitful.@logunit  Mag_bol "Magᵇᵒˡ"   Magnitude    3.0128e28*W
+Unitful.@logunit  mag_bol "magᵇᵒˡ"   Magnitude    2.518_021_002e-8*W*m^-2
 
 const localunits = Unitful.basefactors
 function __init__()
@@ -93,3 +102,4 @@ function __init__()
 end
 
 end
+

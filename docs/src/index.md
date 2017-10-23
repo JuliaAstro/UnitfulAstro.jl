@@ -52,6 +52,40 @@ julia> uconvert(u"ly", 1 * u"pc")
 3.2615637771674337 ly
 ```
 
+## Magnitudes
+
+!!! warn
+    Support for magnitudes is experimental. Please use care and report any issues you experience on
+    the [UnitfulAstro.jl GitHub issue
+    tracker](https://github.com/JuliaAstro/UnitfulAstro.jl/issues).
+
+Currently only AB and bolometric magnitudes are supported.
+
+For example
+
+```jldoctest
+julia> using Unitful, UnitfulAstro
+       u = UnitfulAstro;
+
+julia> 5*u.mag_AB + 5*u.mag_AB
+4.247425010840047 magᴬᴮ
+
+julia> 5*u.mag_AB / 100
+10.0 magᴬᴮ
+
+julia> 5*u.mag_AB + 10*u.Jy # magnitudes can be mixed with ordinary linear units
+46.31 Jy
+
+julia> uconvert(u.mag_AB, 1*u.μJy) # converting one μJy to AB magnitudes
+23.90006562228223 magᴬᴮ
+
+julia> uconvert(u.mag_bol, 1*u.Ssun) # apparent bolometric magnitude of the Sun
+-26.83199694276591 magᵇᵒˡ
+
+julia> uconvert(u.Mag_bol, 1*u.Lsun) # absolute bolometric magnitude of the Sun
+4.7399959339194595 Magᵇᵒˡ
+```
+
 ## IAU Resolutions
 
 Copies of recent IAU resolutions which formalize the definitions of some units used in this package

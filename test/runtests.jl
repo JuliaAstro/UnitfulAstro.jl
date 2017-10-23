@@ -1,4 +1,4 @@
-using UnitfulAstro
+using Unitful, UnitfulAstro
 using Base.Test
 
 const u = UnitfulAstro
@@ -26,7 +26,13 @@ const u = UnitfulAstro
     end
 
     @testset "magnitudes" begin
-        @test 3631*u.Jy == 1*u.mag_AB
+        @test 3631*u.Jy ≈ 0*u.mag_AB
+        @test 36.31*u.Jy ≈ 5*u.mag_AB
+        @test 363.1*u.mJy ≈ 10*u.mag_AB
+        @test 3.631*u.mJy ≈ 15*u.mag_AB
+        @test 5*u.mag_AB + 5*u.mag_AB ≈ 4.247425010840047*u.mag_AB
+        @test 5*u.mag_AB / 100 ≈ 10*u.mag_AB
+        @test 5*u.mag_AB + 10*u.Jy ≈ 46.31*u.Jy
     end
 end
 
