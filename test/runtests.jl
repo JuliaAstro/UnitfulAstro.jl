@@ -23,6 +23,8 @@ const u = UnitfulAstro
         @test isapprox(1*u.GMearth/u.Rearth^2, 1*u.gn, atol=0.001*u.gn)
         # Solar flux at Earth's surface
         @test isapprox(1*u.Lsun/(4π*u.AU^2), 1*u.Ssun, atol=0.001*u.Ssun)
+        # rest mass energy of the sun
+        @test isapprox(1*u.Msun*u.c^2, 1787*u.foe, atol=0.5*u.foe)
     end
 end
 

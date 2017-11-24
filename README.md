@@ -34,6 +34,7 @@ The list of additional units is given below:
 * [Earth mass](https://en.wikipedia.org/wiki/Earth_mass) [1]
 * [Jupiter radius](https://en.wikipedia.org/wiki/Jupiter_radius) [2]
 * [Jupiter mass](https://en.wikipedia.org/wiki/Jupiter_mass) [1]
+* [Fifty-one ergs](https://en.wikipedia.org/wiki/Foe_%28unit%29)
 * [Solar flux unit](https://en.wikipedia.org/wiki/Solar_flux_unit)
 * [Total electron content unit](http://www.swpc.noaa.gov/phenomena/total-electron-content)
 

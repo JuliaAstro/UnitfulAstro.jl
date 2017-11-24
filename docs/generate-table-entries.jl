@@ -27,6 +27,7 @@ table = (("Erg", :erg, :J),
          ("Jupiter radius", :Rjup, :cm),
          ("G × Jupiter mass", :GMjup, u"m^3/s^2"),
          ("Jupiter mass", :Mjup, :g),
+         ("Fifty-one ergs", :foe, :erg),
          ("Solar flux unit", :SFU, :kJy),
          ("Total electron content unit", :TECU, u"cm^-2"))
 

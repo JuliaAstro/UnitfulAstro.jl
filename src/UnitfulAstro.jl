@@ -75,6 +75,9 @@ import UnitfulAngles: arcminute, arcsecond
 # Note that IAU 2015 states that when the radius is not specified as polar or equatorial, the
 # equatorial radius should be used.
 
+# "ten to the Fifty-One Ergs" (approximate energy of a supernova explosition)
+@unit foe        "foe"      FiftyOneErgs              1e51*erg                  false
+
 # Solar flux unit
 # https://en.wikipedia.org/wiki/Solar_flux_unit
 @unit SFU        "SFU"      SolarFluxUnit             10*kJy                    false
