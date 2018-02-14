@@ -1,5 +1,11 @@
 # News
 
+## v0.1.1
+
+*2018-02-14*
+
+* Fix a warning created by the addition of some cgs units to default Unitful.jl.
+
 ## v0.1.0
 
 *2017-09-27*
