@@ -40,10 +40,11 @@ should_we_use_SI_prefixes(arg::Symbol) = false, arg
 @import_from_unitful q c0 c μ0 µ0 ε0 ϵ0 Z0 G gn ge h ħ Φ0 me mn mp μB µB Na R k σ
 @import_from_unitful inch ft yd mi ac lb oz dr gr lbf
 
+# CGS units have been moved to default Unitful.jl now
+@import_from_unitful dyn erg
+
 import UnitfulAngles: arcminute, arcsecond
 
-@unit erg        "erg"      Erg                       (1//10^7)*J               false
-@unit dyn        "dyn"      Dyne                      (1//10^5)*N               false
 @unit yr         "yr"       JulianYear                365.25*d                  true
 @unit AU         "AU"       AstronomicalUnit          149_597_870_700.0*m       false  # cf IAU 2012
 @unit ly         "ly"       LightYear                 1*c*yr                    false
