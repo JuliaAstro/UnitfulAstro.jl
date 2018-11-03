@@ -1,5 +1,5 @@
 using UnitfulAstro
-using Base.Test
+using Test
 
 const u = UnitfulAstro
 
