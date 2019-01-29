@@ -44,6 +44,7 @@ should_we_use_SI_prefixes(arg::Symbol) = false, arg
 @import_from_unitful dyn erg
 
 import UnitfulAngles: arcminute, arcsecond
+@unit mas        "mas"      MilliArcsecond            1e-3*arcsecond            false
 
 @unit yr         "yr"       JulianYear                365.25*d                  true
 @unit AU         "AU"       AstronomicalUnit          149_597_870_700.0*m       false  # cf IAU 2012
