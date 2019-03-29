@@ -38,9 +38,15 @@ The list of additional units is given below:
 * [Solar flux unit](https://en.wikipedia.org/wiki/Solar_flux_unit)
 * [Total electron content unit](http://www.swpc.noaa.gov/phenomena/total-electron-content)
 
+In addition the following magnitudes are supported:
+
+* [Absolute and apparent bolometric magnitude](https://en.wikipedia.org/wiki/Absolute_magnitude#Bolometric_magnitude)
+* [AB magnitude](https://en.wikipedia.org/wiki/AB_magnitude)
+* [Johnson-Cousins UBVRI magnitudes](https://en.wikipedia.org/wiki/UBV_photometric_system)
+* [Gunn griz magnitudes](https://www.cfa.harvard.edu/~dfabricant/huchra/ay145/mags.html#definitions)
+
 Where applicable, all units are defined by the IAU standard.
 
 [1]: gravitational constant times mass also given
 
 [2]: polar and equatorial radii
-
