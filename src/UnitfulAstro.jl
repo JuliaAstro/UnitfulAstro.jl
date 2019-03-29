@@ -117,7 +117,7 @@ Unitful.isrootpower_dim(::typeof(Unitful.dimension(AB_mag))) = false
 struct MagnitudeError <: Exception
     x
 end
-Base.showerror(io::IO, e::MagnitudeError) = print(io, "MagnitudeError: $(e.x)")
+Base.showerror(io::IO, e::MagnitudeError) = print(io, "MagnitudeError: ", e.x)
 
 # https://en.wikipedia.org/wiki/Color_index
 # for color indices (subtracting magnitudes of different passbands)
