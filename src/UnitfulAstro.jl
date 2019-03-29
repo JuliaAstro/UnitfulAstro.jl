@@ -3,7 +3,7 @@ __precompile__()
 module UnitfulAstro
 
 import Unitful
-using Unitful: @unit
+using Unitful: @unit, @logscale, @logunit, dimension
 
 macro import_from_unitful(args...)
     expr = Expr(:block)
@@ -86,9 +86,38 @@ import UnitfulAngles: arcminute, arcsecond
 # Total electron content unit (used for ionospheric physics and low-frequency radio astronomy)
 @unit TECU       "TECU"     TotalElectronContentUnit  1e16*m^-2                 false
 
+@logscale mag "mag" Magnitude 10 -2.5 false
+
+#https://en.wikipedia.org/wiki/AB_magnitude     
+@logunit    AB_mag  "AB mag"        Magnitude   3631Jy
+
+# Bolometric magnitudes (cf IAU 2015)
+# https://en.wikipedia.org/wiki/Absolute_magnitude#Bolometric_magnitude
+@logunit    bol_Mag "bol Mag"       Magnitude   3.0128e28*W
+@logunit    bol_mag "bol mag"       Magnitude   2.518_021_002e-8*W*m^-2
+
+#https://en.wikipedia.org/wiki/Apparent_magnitude#Standard_reference_values
+#https://www.cfa.harvard.edu/~dfabricant/huchra/ay145/mags.html
+@logunit    U_mag   "Johnson U mag" Magnitude   1810Jy
+@logunit    B_mag   "Johnson B mag" Magnitude   4260Jy
+@logunit    V_mag   "Johnson V mag" Magnitude   3640Jy
+@logunit    R_mag   "Johnson R mag" Magnitude   3080Jy
+@logunit    I_mag   "Johnson I mag" Magnitude   2550Jy
+@logunit    J_mag   "Johnson J mag" Magnitude   1600Jy
+@logunit    H_mag   "Johnson H mag" Magnitude   1080Jy
+@logunit    K_mag   "Johnson K mag" Magnitude    670Jy
+@logunit    g_mag   "Gunn g mag"    Magnitude   3730Jy
+@logunit    r_mag   "Gunn r mag"    Magnitude   4490Jy
+@logunit    i_mag   "Gunn i mag"    Magnitude   4760Jy
+@logunit    z_mag   "Gunn z mag"    Magnitude   4810Jy
+
+Unitful.isrootpower_dim(::typeof(dimension(AB_mag))) = false
+
 const localunits = Unitful.basefactors
+const localpromotion = Unitful.promotion
 function __init__()
     merge!(Unitful.basefactors, localunits)
+    merge!(Unitful.promotion, localpromotion)
     Unitful.register(UnitfulAstro)
 end
 
