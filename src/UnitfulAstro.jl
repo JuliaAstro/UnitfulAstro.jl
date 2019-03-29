@@ -111,8 +111,6 @@ import UnitfulAngles: arcminute, arcsecond
 @logunit    i_mag   "Gunn i mag"    Magnitude   4760Jy
 @logunit    z_mag   "Gunn z mag"    Magnitude   4810Jy
 
-Unitful.isrootpower_dim(::typeof(Unitful.dimension(AB_mag))) = false
-
 
 struct MagnitudeError <: AbstractString
     x
