@@ -150,10 +150,8 @@ end
 
 
 const localunits = Unitful.basefactors
-const localpromotion = Unitful.promotion
 function __init__()
     merge!(Unitful.basefactors, localunits)
-    merge!(Unitful.promotion, localpromotion)
     Unitful.register(UnitfulAstro)
 end
 
