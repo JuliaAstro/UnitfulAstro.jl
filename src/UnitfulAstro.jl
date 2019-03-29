@@ -112,7 +112,7 @@ import UnitfulAngles: arcminute, arcsecond
 @logunit    z_mag   "Gunn z mag"    Magnitude   4810Jy
 
 
-struct MagnitudeError <: AbstractString
+struct MagnitudeError <: Exception
     x
 end
 Base.showerror(io::IO, e::MagnitudeError) = print(io, "MagnitudeError: ", e.x)
