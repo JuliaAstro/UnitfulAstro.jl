@@ -3,7 +3,7 @@ __precompile__()
 module UnitfulAstro
 
 import Unitful
-using Unitful: @unit, @logscale, @logunit, dimension
+using Unitful: @unit, @logscale, @logunit
 
 macro import_from_unitful(args...)
     expr = Expr(:block)
@@ -111,7 +111,45 @@ import UnitfulAngles: arcminute, arcsecond
 @logunit    i_mag   "Gunn i mag"    Magnitude   4760Jy
 @logunit    z_mag   "Gunn z mag"    Magnitude   4810Jy
 
-Unitful.isrootpower_dim(::typeof(dimension(AB_mag))) = false
+Unitful.isrootpower_dim(::typeof(Unitful.dimension(AB_mag))) = false
+
+
+struct MagnitudeError <: Exception
+    x
+end
+Base.showerror(io::IO, e::MagnitudeError) = print(io, "MagnitudeError: $(e.x)")
+
+# https://en.wikipedia.org/wiki/Color_index
+# for color indices (subtracting magnitudes of different passbands)
+import Base.-
+function -(x::Unitful.Level{L,S,T},y::Unitful.Level{L,S,T}) where {L<:Magnitude,S,T<:Unitful.Quantity}
+    return Unitful.Level{L,S}(-(x.val, y.val))
+end
+import Base.-
+function -(x::Unitful.Level{L,S,T},y::Unitful.Level{L,R,T}) where {L<:Magnitude,S,R,T<:Unitful.Quantity}
+    return Unitful.ustrip(x) - Unitful.ustrip(y)
+end
+import Base.+
+function +(x::Unitful.Level{L,S,T},y::Unitful.Level{L,S,T}) where {L<:Magnitude,S,T<:Unitful.Quantity}
+    return Unitful.Level{L,S}(+(x.val, y.val))
+end
+import Base.+
+function +(x::Unitful.Level{L,S,T},y::Unitful.Level{L,R,T}) where {L<:Magnitude,S,R,T<:Unitful.Quantity}
+    throw(MagnitudeError("an invalid operation was attempted with magnitudes: $x, $y"))
+end
+import Base.*
+function *(x::Unitful.Level{L,S,T},y::Unitful.Level{L,R,T}) where {L<:Magnitude,S,R,T<:Unitful.Quantity}
+    throw(MagnitudeError("an invalid operation was attempted with magnitudes: $x, $y"))
+end
+import Base./
+function /(x::Unitful.Level{L,S,T},y::Unitful.Level{L,R,T}) where {L<:Magnitude,S,R,T<:Unitful.Quantity}
+    throw(MagnitudeError("an invalid operation was attempted with magnitudes: $x, $y"))
+end
+import Base.//
+function //(x::Unitful.Level{L,S,T},y::Unitful.Level{L,R,T}) where {L<:Magnitude,S,R,T<:Unitful.Quantity}
+    throw(MagnitudeError("an invalid operation was attempted with magnitudes: $x, $y"))
+end
+
 
 const localunits = Unitful.basefactors
 const localpromotion = Unitful.promotion

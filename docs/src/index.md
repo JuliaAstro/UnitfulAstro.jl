@@ -108,6 +108,27 @@ julia> uconvert(u.mag_bol, 1*u.Ssun) # apparent bolometric magnitude of the Sun
 julia> uconvert(u.bol_Mag, 1*u.Lsun) # absolute bolometric magnitude of the Sun
 4.7399959339194595 bol Mag
 ```
+### Color
+
+[Color index](https://en.wikipedia.org/wiki/Color_index) is also supported
+
+```jldoctest
+julia> 1u.B_mag - 0.5u.V_mag
+0.5000000000000002
+```
+**Note:** that the only operation that can happen between different bands is subtraction
+```jldoctest
+julia> 1u.B_mag + 0.5u.V_mag
+ERROR: MagnitudeError: an invalid operation was attempted with magnitudes: 1.0000000000000002 Johnson B mag, 0.5 Johnson V mag
+```
+**and** that `+` and `-` work on individual bands
+```jldoctest
+julia> 1u.B_mag - 1.5u.B_mag
+2.082308583340621 Johnson B mag
+
+julia> 1u.B_mag + 1.5u.B_mag
+0.46889349301415095 Johnson B mag
+```
 
 ## IAU Resolutions
 

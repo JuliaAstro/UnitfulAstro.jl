@@ -51,6 +51,15 @@ const u = UnitfulAstro
         @test isapprox(1u.r_mag, 4490*u.Jy, atol=0.001*u.r_mag)
         @test isapprox(1u.i_mag, 4760*u.Jy, atol=0.001*u.i_mag)
         @test isapprox(1u.z_mag, 4810*u.Jy, atol=0.001*u.z_mag)
+
+        @test iszero(1u.B_mag - 1u.V_mag)
+        @test isapprox(5*u.B_mag - 1u.V_mag, 4)
+        @test isapprox(1u.B_mag - 5*u.V_mag, -4)
+        @test isapprox(1u.B_mag - 0.5u.V_mag, 0.5)
+        @test_throws u.MagnitudeError 1u.B_mag + 2u.V_mag
+        @test_throws u.MagnitudeError 1u.B_mag * 2u.V_mag
+        @test_throws u.MagnitudeError 1u.B_mag / 2u.V_mag
+        @test_throws u.MagnitudeError 1u.B_mag // 2u.V_mag
     end
 end
 
