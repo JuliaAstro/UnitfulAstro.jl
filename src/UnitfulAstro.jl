@@ -114,7 +114,7 @@ import UnitfulAngles: arcminute, arcsecond
 Unitful.isrootpower_dim(::typeof(Unitful.dimension(AB_mag))) = false
 
 
-struct MagnitudeError <: Exception
+struct MagnitudeError <: AbstractString
     x
 end
 Base.showerror(io::IO, e::MagnitudeError) = print(io, "MagnitudeError: ", e.x)
