@@ -53,6 +53,83 @@ julia> uconvert(u"ly", 1 * u"pc")
 3.2615637771674337 ly
 ```
 
+## Magnitudes
+
+|                          Name |              Binding |                Zero Point |
+|-------------------------------|----------------------|---------------------------|
+| absolute bolometric Magnitude | `UnitfulAstro.bol_Mag` | `3.0128e28 W`           |
+| apparent bolometric magnitude | `UnitfulAstro.bol_mag` | `2.518021002e-8 W m^-2` |
+|                  AB magnitude | `UnitfulAstro.AB_mag`  | `3631 Jy`               |
+|           Johnson U magnitude | `UnitfulAstro.U_mag`   | `1810 Jy`               |
+|           Johnson U magnitude | `UnitfulAstro.B_mag`   | `4260 Jy`               |
+|           Johnson V magnitude | `UnitfulAstro.V_mag`   | `3640 Jy`               |
+|           Johnson R magnitude | `UnitfulAstro.R_mag`   | `3080 Jy`               |
+|           Johnson I magnitude | `UnitfulAstro.I_mag`   | `2550 Jy`               |
+|           Johnson J magnitude | `UnitfulAstro.J_mag`   | `1600 Jy`               |
+|           Johnson H magnitude | `UnitfulAstro.H_mag`   | `1080 Jy`               |
+|           Johnson K magnitude | `UnitfulAstro.K_mag`   | `670 Jy`                |
+|              Gunn g magnitude | `UnitfulAstro.g_mag`   | `3730 Jy`               |
+|              Gunn r magnitude | `UnitfulAstro.r_mag`   | `4490 Jy`               |
+|              Gunn i magnitude | `UnitfulAstro.i_mag`   | `4760 Jy`               |
+|              Gunn z magnitude | `UnitfulAstro.z_mag`   | `4810 Jy`               |
+
+
+
+
+!!! warn
+    Support for magnitudes is experimental. Please use care and report any issues you experience on
+    the [UnitfulAstro.jl GitHub issue
+    tracker](https://github.com/JuliaAstro/UnitfulAstro.jl/issues).
+
+Currently only AB, bolometric, Johnson, and Gunn magnitudes are supported.
+
+For example
+
+```jldoctest
+julia> using Unitful, UnitfulAstro
+    
+julia> u = UnitfulAstro;
+
+julia> 5*u.AB_mag + 5*u.AB_mag
+4.247425010840047 AB mag
+
+julia> 5*u.U_mag/100
+10.0 Johnson U mag
+
+julia> 5*u.g_mag + 10*u.Jy # magnitudes can be mixed with ordinary linear units
+47.300000000000004 Jy
+
+julia> uconvert(u.AB_mag, 1*u.μJy) # converting one μJy to AB magnitudes
+23.90006562228223 AB mag
+
+julia> uconvert(u.mag_bol, 1*u.Ssun) # apparent bolometric magnitude of the Sun
+-26.83199694276591 bol mag
+
+julia> uconvert(u.bol_Mag, 1*u.Lsun) # absolute bolometric magnitude of the Sun
+4.7399959339194595 bol Mag
+```
+### Color
+
+[Color index](https://en.wikipedia.org/wiki/Color_index) is also supported
+
+```jldoctest
+julia> 1u.B_mag - 0.5u.V_mag
+0.5000000000000002
+```
+**Note:** that the only operation that can happen between different bands is subtraction
+```jldoctest
+julia> 1u.B_mag + 0.5u.V_mag
+ERROR: MagnitudeError: an invalid operation was attempted with magnitudes: 1.0000000000000002 Johnson B mag, 0.5 Johnson V mag
+```
+**and** that `+` and `-` work on individual bands
+```jldoctest
+julia> 1u.B_mag - 1.5u.B_mag
+2.082308583340621 Johnson B mag
+
+julia> 1u.B_mag + 1.5u.B_mag
+0.46889349301415095 Johnson B mag
+```
+
 ## IAU Resolutions
 
 Copies of recent IAU resolutions which formalize the definitions of some units used in this package
