@@ -34,9 +34,9 @@ function should_we_use_SI_prefixes(arg::Expr)
 end
 should_we_use_SI_prefixes(arg::Symbol) = false, arg
 
-@import_from_unitful ~m ~s ~A ~K ~cd ~g ~mol
+@import_from_unitful ~m ~s ~A ~K ~cd
 @import_from_unitful ~L ~Hz ~N ~Pa ~J ~W ~C ~V ~Ω ~S ~F ~H ~T ~Wb ~lm ~lx ~Bq ~Gy ~Sv ~kat ~eV
-@import_from_unitful sr rad ° °C °Ra °F minute hr d wk ~bar atm Torr
+@import_from_unitful sr rad ° °C °F Ra minute hr d wk ~bar atm Torr
 @import_from_unitful q c0 c μ0 µ0 ε0 ϵ0 Z0 G gn ge h ħ Φ0 me mn mp μB µB Na R k σ
 @import_from_unitful inch ft yd mi ac lb oz dr gr lbf
 
