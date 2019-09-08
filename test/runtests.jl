@@ -60,6 +60,17 @@ const u = UnitfulAstro
         @test_throws u.MagnitudeError 1u.B_mag * 2u.V_mag
         @test_throws u.MagnitudeError 1u.B_mag / 2u.V_mag
         @test_throws u.MagnitudeError 1u.B_mag // 2u.V_mag
+
+        # Extra tests for rootpower calculations
+        flux = 10u.erg
+        mag = 1u.mag
+        @test isapprox(flux * mag, 3.981071705534972u.erg)
+        flux = 10u.erg/u.s
+        @test isapprox(flux * mag, 3.981071705534972u.erg/u.s)
+        flux = 10u.erg/u.s/u.cm^2
+        @test isapprox(flux * mag, 3.981071705534972u.erg/u.s/u.cm^2)
+        flux = 10u.erg/u.s/u.cm^2/u.angstrom
+        @test isapprox(flux * mag, 3.981071705534972u.erg/u.s/u.cm^2/u.angstrom)
     end
 end
 
