@@ -18,7 +18,6 @@ The list of additional units is given below:
 |                  Light year |        `UnitfulAstro.ly` |        `9.4607304725808e17 cm` |
 |                      Parsec |        `UnitfulAstro.pc` |     `3.0856775814913674e18 cm` |
 |                      Jansky |        `UnitfulAstro.Jy` | `1.0e-23 erg Hz^-1 cm^-2 s^-1` |
-|                    Angstrom |  `UnitfulAstro.angstrom` |                       `0.1 nm` |
 |                Solar radius |      `UnitfulAstro.Rsun` |                  `6.957e10 cm` |
 |            Solar irradiance |      `UnitfulAstro.Ssun` |       `1.361e6 erg cm^-2 s^-1` |
 |            Solar luminosity |      `UnitfulAstro.Lsun` |            `3.828e33 erg s^-1` |
