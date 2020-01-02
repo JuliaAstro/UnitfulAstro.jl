@@ -70,6 +70,8 @@ const u = UnitfulAstro
         @test isapprox(flux * mag, 3.981071705534972u.erg/u.s)
         flux = 10u.erg/u.s/u.cm^2
         @test isapprox(flux * mag, 3.981071705534972u.erg/u.s/u.cm^2)
+        flux = 10u.erg/u.s/u.cm^2/Unitful.angstrom
+        @test isapprox(flux * mag, 3.981071705534972u.erg/u.s/u.cm^2/Unitful.angstrom)
     end
 end
 
