@@ -52,7 +52,6 @@ import UnitfulAngles: arcminute, arcsecond
 # Note that IAU 2015 defines the small angle approximation as exact in the definition of the parsec.
 @unit Jy         "Jy"       Jansky                    1e-23erg*s^-1*cm^-2*Hz^-1 true
 # Note that Jy uses a Float64 conversion factor because 10^23 overflows Int64.
-@unit angstrom   "Å"        Angstrom                  1e-10*m                   false
 
 # SOLAR CONVERSION CONSTANTS (IAU 2015)
 @unit Rsun       "R⊙"       SolarRadius               6.957e8*m                 false

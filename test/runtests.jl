@@ -1,3 +1,4 @@
+using Unitful
 using UnitfulAstro
 using Test
 
@@ -13,7 +14,7 @@ const u = UnitfulAstro
         @test 365.25*u.d == 1*u.yr
         @test 1*u.ly == 1*u.c*u.yr
         @test 1*u.pc == 1*u.AU/u.arcsecond
-        @test 1*u.angstrom == 1e-10*u.m
+        @test 1.0*Unitful.angstrom ≈ 1e-10*u.m
         @test 1*u.SFU ≈ 10000*u.Jy
         @test 1*u.TECU == 1e12*u.cm^-2
     end
@@ -69,8 +70,8 @@ const u = UnitfulAstro
         @test isapprox(flux * mag, 3.981071705534972u.erg/u.s)
         flux = 10u.erg/u.s/u.cm^2
         @test isapprox(flux * mag, 3.981071705534972u.erg/u.s/u.cm^2)
-        flux = 10u.erg/u.s/u.cm^2/u.angstrom
-        @test isapprox(flux * mag, 3.981071705534972u.erg/u.s/u.cm^2/u.angstrom)
+        flux = 10u.erg/u.s/u.cm^2/Unitful.angstrom
+        @test isapprox(flux * mag, 3.981071705534972u.erg/u.s/u.cm^2/Unitful.angstrom)
     end
 end
 

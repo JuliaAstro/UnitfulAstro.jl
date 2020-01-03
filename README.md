@@ -25,7 +25,6 @@ The list of additional units is given below:
 * [Light year](https://en.wikipedia.org/wiki/Light-year)
 * [Parsec](https://en.wikipedia.org/wiki/Parsec)
 * [Jansky](https://en.wikipedia.org/wiki/Jansky)
-* [Angstrom](https://en.wikipedia.org/wiki/%C3%85ngstr%C3%B6m)
 * [Solar radius](https://en.wikipedia.org/wiki/Solar_radius)
 * [Solar irradiance](https://en.wikipedia.org/wiki/Solar_irradiance)
 * [Solar luminosity](https://en.wikipedia.org/wiki/Solar_luminosity)
