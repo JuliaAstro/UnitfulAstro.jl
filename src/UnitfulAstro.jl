@@ -3,7 +3,7 @@ __precompile__()
 module UnitfulAstro
 
 import Unitful
-using Unitful: @unit, @logscale, @logunit
+using Unitful: @unit, @logscale, @logunit, yr
 
 macro import_from_unitful(args...)
     expr = Expr(:block)
@@ -45,7 +45,6 @@ should_we_use_SI_prefixes(arg::Symbol) = false, arg
 
 import UnitfulAngles: arcminute, arcsecond
 
-@unit yr         "yr"       JulianYear                365.25*d                  true
 @unit AU         "AU"       AstronomicalUnit          149_597_870_700.0*m       false  # cf IAU 2012
 @unit ly         "ly"       LightYear                 1*c*yr                    false
 @unit pc         "pc"       Parsec                    1*AU/arcsecond            true   # cf IAU 2015
