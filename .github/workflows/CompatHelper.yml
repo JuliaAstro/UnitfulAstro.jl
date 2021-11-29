@@ -10,6 +10,7 @@ on:
 jobs:
   CompatHelper:
     runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, '[compat]')"
     steps:
       - uses: julia-actions/setup-julia@latest
         with:
