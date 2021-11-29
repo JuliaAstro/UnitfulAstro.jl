@@ -1,10 +1,9 @@
 # UnitfulAstro.jl
 
-UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) to include
+UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/PainterQubits/Unitful.jl) to include
 units commonly encountered in astronomy.
 
-[![Build Status](https://travis-ci.org/JuliaAstro/UnitfulAstro.jl.svg?branch=master)](https://travis-ci.org/JuliaAstro/UnitfulAstro.jl)
-[![Build Status](https://ci.appveyor.com/api/projects/status/9tgicxbo6ud533hp/branch/master?svg=true)](https://ci.appveyor.com/project/mweastwood/unitfulastro-jl/branch/master)
+[![CI](https://github.com/JuliaAstro/UnitfulAstro.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/JuliaAstro/UnitfulAstro.jl/actions/workflows/ci.yml)
 
 **Author:** Michael Eastwood
 
