@@ -49,7 +49,7 @@ julia> uconvert(u"Jy", 1.23e-20 * u"erg/s/cm^2/Hz")
 1230.0000000000002 Jy
 
 julia> uconvert(u"ly", 1 * u"pc")
-3.2615637771674337 ly
+3.2615637771674333 ly
 ```
 
 ## Magnitudes
@@ -101,7 +101,7 @@ julia> 5*u.g_mag + 10*u.Jy # magnitudes can be mixed with ordinary linear units
 julia> uconvert(u.AB_mag, 1*u.μJy) # converting one μJy to AB magnitudes
 23.90006562228223 AB mag
 
-julia> uconvert(u.mag_bol, 1*u.Ssun) # apparent bolometric magnitude of the Sun
+julia> uconvert(u.bol_mag, 1*u.Ssun) # apparent bolometric magnitude of the Sun
 -26.83199694276591 bol mag
 
 julia> uconvert(u.bol_Mag, 1*u.Lsun) # absolute bolometric magnitude of the Sun
@@ -112,21 +112,33 @@ julia> uconvert(u.bol_Mag, 1*u.Lsun) # absolute bolometric magnitude of the Sun
 [Color index](https://en.wikipedia.org/wiki/Color_index) is also supported
 
 ```jldoctest
+julia> using UnitfulAstro
+
+julia> u = UnitfulAstro;
+
 julia> 1u.B_mag - 0.5u.V_mag
-0.5000000000000002
+0.4999999999999999
 ```
 **Note:** that the only operation that can happen between different bands is subtraction
 ```jldoctest
+julia> using UnitfulAstro
+
+julia> u = UnitfulAstro;
+
 julia> 1u.B_mag + 0.5u.V_mag
-ERROR: MagnitudeError: an invalid operation was attempted with magnitudes: 1.0000000000000002 Johnson B mag, 0.5 Johnson V mag
+ERROR: MagnitudeError: an invalid operation was attempted with magnitudes: 0.9999999999999999 Johnson B mag, 0.5 Johnson V mag
 ```
 **and** that `+` and `-` work on individual bands
 ```jldoctest
+julia> using UnitfulAstro
+
+julia> u = UnitfulAstro;
+
 julia> 1u.B_mag - 1.5u.B_mag
-2.082308583340621 Johnson B mag
+2.0823085833406205 Johnson B mag
 
 julia> 1u.B_mag + 1.5u.B_mag
-0.46889349301415095 Johnson B mag
+0.46889349301415084 Johnson B mag
 ```
 
 ## IAU Resolutions
