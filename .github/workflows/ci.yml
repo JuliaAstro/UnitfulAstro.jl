@@ -63,8 +63,8 @@ jobs:
             with:
                 version: '1'
           - uses: julia-actions/julia-buildpkg@v1
-          - run: julia -e 'using Pkg; Pkg.add("Aqua")'
-          - run: julia --project=@. -e 'using Aqua, UnitfulAstro; Aqua.test_all(UnitfulAstro, ambiguities=false)'
+          - run: julia --project=@. --color=yes -e 'using Pkg; Pkg.add("Aqua")'
+          - run: julia --project=@. --color=yes -e 'using Aqua, UnitfulAstro; Aqua.test_all(UnitfulAstro, ambiguities=false)'
 
   Documentation:
     runs-on: ubuntu-latest
