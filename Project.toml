@@ -1,7 +1,7 @@
 name = "UnitfulAstro"
 uuid = "6112ee07-acf9-5e0f-b108-d242c714bf9f"
 license = "MIT"
-version = "1.1.0"
+version = "1.1.1"
 
 [deps]
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"

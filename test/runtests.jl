@@ -17,6 +17,8 @@ const u = UnitfulAstro
         @test 1.0*Unitful.angstrom ≈ 1e-10*u.m
         @test 1*u.SFU ≈ 10000*u.Jy
         @test 1*u.TECU == 1e12*u.cm^-2
+        # Make sure we can access Gyr directly from UnitfulAstro
+        @test 1*u.Gyr ≈ 1e9*u.yr
     end
 
     @testset "simple calculations" begin
