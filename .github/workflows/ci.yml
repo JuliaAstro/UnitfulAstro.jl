@@ -2,11 +2,15 @@ name: CI
 
 on:
   push:
-    branches: "master"
+    branches: ["master"]
     tags: ["*"]
   pull_request:
-  release:
-
+    branches: ["master"]
+concurrency:
+  # Skip intermediate builds: always.
+  # Cancel intermediate builds: only if it is a pull request build.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 jobs:
   test:
     name: Julia ${{ matrix.julia-version }} - ${{ matrix.os }} - ${{ matrix.julia-arch }}
@@ -49,6 +53,18 @@ jobs:
         continue-on-error: true
       - uses: julia-actions/julia-uploadcoveralls@v0.1
         continue-on-error: true
+
+  Aqua:
+      name: Aqua tests
+      runs-on: ubuntu-latest
+      steps:
+          - uses: actions/checkout@v2
+          - uses: julia-actions/setup-julia@v1
+            with:
+                version: '1'
+          - uses: julia-actions/julia-buildpkg@v1
+          - run: julia -e 'using Pkg; Pkg.add("Aqua")'
+          - run: julia --project=@. -e 'using Aqua, UnitfulAstro; Aqua.test_all(UnitfulAstro, ambiguities=false)'
 
   Documentation:
     runs-on: ubuntu-latest
