@@ -9,7 +9,7 @@ UnitfulAngles = "6fb2a4bd-7999-5318-a3b2-8ad61056cd98"
 
 [compat]
 Unitful = "1.2"
-UnitfulAngles = "0.5, 0.6"
+UnitfulAngles = "0.5, 0.6, 0.7"
 julia = "1.6.0"
 
 [extras]
