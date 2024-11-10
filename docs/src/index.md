@@ -60,7 +60,7 @@ julia> uconvert(u"ly", 1 * u"pc")
 | apparent bolometric magnitude | `UnitfulAstro.bol_mag` | `2.518021002e-8 W m^-2` |
 |                  AB magnitude | `UnitfulAstro.AB_mag`  | `3631 Jy`               |
 |           Johnson U magnitude | `UnitfulAstro.U_mag`   | `1810 Jy`               |
-|           Johnson U magnitude | `UnitfulAstro.B_mag`   | `4260 Jy`               |
+|           Johnson B magnitude | `UnitfulAstro.B_mag`   | `4260 Jy`               |
 |           Johnson V magnitude | `UnitfulAstro.V_mag`   | `3640 Jy`               |
 |           Johnson R magnitude | `UnitfulAstro.R_mag`   | `3080 Jy`               |
 |           Johnson I magnitude | `UnitfulAstro.I_mag`   | `2550 Jy`               |
