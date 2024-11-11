@@ -51,7 +51,7 @@ julia> uconvert(u"erg", 1 * Unitful.kg * Unitful.gn * Unitful.m)
 julia> uconvert(u"Jy", 1.23e-20 * u"erg/s/cm^2/Hz")
 1230.0000000000002 Jy
 
-julia> uconvert(u"ly", 1 * u"pc")
+julia> uconvert(u"ly", 1u"pc")
 3.2615637771674333 ly
 ```
 
