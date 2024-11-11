@@ -86,7 +86,7 @@ import UnitfulAngles: arcminute, arcsecond
 
 @logscale mag "mag" Magnitude 10 -2.5 false
 
-#https://en.wikipedia.org/wiki/AB_magnitude     
+#https://en.wikipedia.org/wiki/AB_magnitude
 @logunit    AB_mag  "AB mag"        Magnitude   3631Jy
 
 # Bolometric magnitudes (cf IAU 2015)
