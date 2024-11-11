@@ -1,6 +1,6 @@
 # UnitfulAstro.jl Documentation
 
-UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) to include
+UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/PainterQubits/Unitful.jl) to include
 units commonly encountered in astronomy.
 
 ## Table of Units
