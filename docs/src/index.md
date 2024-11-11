@@ -1,3 +1,6 @@
+```@meta
+DocTestSetup = :(using Unitful, UnitfulAstro)
+```
 # UnitfulAstro.jl Documentation
 
 UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/PainterQubits/Unitful.jl) to include
@@ -85,8 +88,6 @@ Currently only AB, bolometric, Johnson, and Gunn magnitudes are supported.
 For example
 
 ```jldoctest
-julia> using Unitful, UnitfulAstro
-    
 julia> u = UnitfulAstro;
 
 julia> 5*u.AB_mag + 5*u.AB_mag
@@ -112,8 +113,6 @@ julia> uconvert(u.bol_Mag, 1*u.Lsun) # absolute bolometric magnitude of the Sun
 [Color index](https://en.wikipedia.org/wiki/Color_index) is also supported
 
 ```jldoctest
-julia> using UnitfulAstro
-
 julia> u = UnitfulAstro;
 
 julia> 1u.B_mag - 0.5u.V_mag
@@ -121,8 +120,6 @@ julia> 1u.B_mag - 0.5u.V_mag
 ```
 **Note:** that the only operation that can happen between different bands is subtraction
 ```jldoctest
-julia> using UnitfulAstro
-
 julia> u = UnitfulAstro;
 
 julia> 1u.B_mag + 0.5u.V_mag
@@ -130,8 +127,6 @@ ERROR: MagnitudeError: an invalid operation was attempted with magnitudes: 0.999
 ```
 **and** that `+` and `-` work on individual bands
 ```jldoctest
-julia> using UnitfulAstro
-
 julia> u = UnitfulAstro;
 
 julia> 1u.B_mag - 1.5u.B_mag
