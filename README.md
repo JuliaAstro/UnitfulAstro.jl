@@ -4,6 +4,8 @@ UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/PainterQubits
 units commonly encountered in astronomy.
 
 [![CI](https://github.com/JuliaAstro/UnitfulAstro.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/JuliaAstro/UnitfulAstro.jl/actions/workflows/ci.yml)
+[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://juliaastro.org/UnitfulAstro.jl/stable/)
+[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://juliaastro.org/UnitfulAstro.jl/dev)
 
 **Author:** Michael Eastwood
 
