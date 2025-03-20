@@ -14,8 +14,8 @@ The list of additional units is given below:
 |-----------------------------|--------------------------|--------------------------------|
 |                         Erg |       `UnitfulAstro.erg` |                `1//10000000 J` |
 |                        Dyne |       `UnitfulAstro.dyn` |                  `1//100000 N` |
-|                   Arcminute | `UnitfulAstro.arcminute` |                       `1//60°` |
-|                   Arcsecond | `UnitfulAstro.arcsecond` |                     `1//3600°` |
+|                   Arcminute | `UnitfulAstro.arcminute` |                      `1//60 °` |
+|                   Arcsecond | `UnitfulAstro.arcsecond` |                    `1//3600 °` |
 |                 Julian year |        `UnitfulAstro.yr` |                    `1461//4 d` |
 |           Astronomical unit |        `UnitfulAstro.AU` |            `1.495978707e13 cm` |
 |                  Light year |        `UnitfulAstro.ly` |        `946073047258080000 cm` |
