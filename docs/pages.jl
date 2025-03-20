@@ -1,3 +1,5 @@
 pages = [
-    "Home" => "index.md"
+    "Home" => "index.md",
+    "API Reference" => "api.md",
+    "Bibliography" => "bibliography.md",
 ]
