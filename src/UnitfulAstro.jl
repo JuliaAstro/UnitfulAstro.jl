@@ -43,7 +43,7 @@ should_we_use_SI_prefixes(arg::Symbol) = false, arg
 # CGS units have been moved to default Unitful.jl now
 @import_from_unitful dyn erg
 
-import UnitfulAngles: arcminute, arcsecond
+import UnitfulAngles: arcminute, arcsecond, mas, μas
 
 #    symbol      abbrev     name                      equality                  tf
 
