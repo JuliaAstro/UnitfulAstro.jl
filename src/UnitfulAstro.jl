@@ -199,7 +199,7 @@ It is defined as 10 kJy, or 10^4 Jy.
 
 # Total electron content unit (used for ionospheric physics and low-frequency radio astronomy)
 "    UnitfulAstro.TECU
-\nThe total electron content unit, a unit of areal number density. It is defined as 10^16 m^-2. TODO cite Hofmann-Wellenhof (2001).
+\nThe total electron content unit, a unit of areal number density. It is defined as 10^16 m^-2.
 \nDimension: `𝐋^-2`
 \nReference: [Hofmann-Wellenhof (2001)](@cite hofmann-wellenhof2001)"
 @unit TECU       "TECU"     TotalElectronContentUnit  1e16*m^-2                 false
