@@ -10,7 +10,10 @@ bib = CitationBibliography(joinpath(@__DIR__, "src", "refs.bib"); style = :numer
 
 include("pages.jl")
 makedocs(;
-    format = Documenter.HTML(prettyurls = !("local" in ARGS)),
+    format = Documenter.HTML(;
+        prettyurls = !("local" in ARGS),
+        canonical = "https://juliaastro.org/UnitfulAstro/stable/",
+    ),
     sitename = "UnitfulAstro.jl",
     authors = "Michael Eastwood",
     linkcheck = true,
@@ -21,8 +24,6 @@ makedocs(;
 
 deploydocs(
     repo = "github.com/JuliaAstro/UnitfulAstro.jl.git",
-    target = "build",
-    deps = nothing,
-    make = nothing,
+    push_preview = true,
+    versions = ["stable" => "v^", "v#.#"], # Restrict to minor releases
 )
-
