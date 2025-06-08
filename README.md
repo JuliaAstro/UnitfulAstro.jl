@@ -11,7 +11,7 @@ UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/PainterQubits
 
 **License:** MIT "Expat"
 
-**Documentation:** http://juliaastro.github.io/UnitfulAstro.jl/stable
+**Documentation:** https://juliaastro.org/UnitfulAstro
 
 ## Summary of Units
 
