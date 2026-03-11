@@ -3,7 +3,7 @@ DocTestSetup = :(using Unitful, UnitfulAstro)
 ```
 # UnitfulAstro.jl Documentation
 
-UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/PainterQubits/Unitful.jl) to include
+UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/JuliaPhysics/Unitful.jl) to include
 units commonly encountered in astronomy.
 
 ## Table of Units
