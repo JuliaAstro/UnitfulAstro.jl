@@ -5,7 +5,7 @@
 
 [![CI](https://github.com/JuliaAstro/UnitfulAstro.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/JuliaAstro/UnitfulAstro.jl/actions/workflows/ci.yml)
 
-UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/PainterQubits/Unitful.jl) to include units commonly encountered in astronomy.
+UnitfulAstro.jl is an extension of [Unitful.jl](https://github.com/JuliaPhysics/Unitful.jl) to include units commonly encountered in astronomy.
 
 **Author:** Michael Eastwood
 
