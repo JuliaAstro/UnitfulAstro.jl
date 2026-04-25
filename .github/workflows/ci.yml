@@ -13,27 +13,38 @@ concurrency:
   cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 jobs:
   test:
-    name: Julia ${{ matrix.julia-version }} - ${{ matrix.os }} - ${{ matrix.julia-arch }}
+    name: Julia ${{ matrix.julia-version }} - ${{ matrix.os }} - ${{ matrix.arch }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         julia-version:
-          - "1.6"
-          - "1"
-          - "nightly"
+          - '1.6'
+          - '1'
+          - 'nightly'
         os:
           - ubuntu-latest
           - macos-latest
           - windows-latest
-        julia-arch:
-          - x64
+        arch:
+          - 'default'
+        force-arch:
+          - 'false'
+        exclude:
+          - os: macOS-latest
+            version: '1.6'
+        include:
+          - os: macOS-latest
+            version: '1.6'
+            arch: 'x64'
+            force-arch: 'true'
     steps:
       - uses: actions/checkout@v6
       - uses: julia-actions/setup-julia@v3
         with:
           version: ${{ matrix.julia-version }}
-          arch: ${{ matrix.julia-arch }}
+          arch: ${{ matrix.arch }}
+          force-arch: ${{ matrix.force-arch }}
       - uses: julia-actions/cache@v3
       - uses: julia-actions/julia-buildpkg@latest
       - uses: julia-actions/julia-runtest@latest
