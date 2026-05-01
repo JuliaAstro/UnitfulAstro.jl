@@ -57,8 +57,8 @@ julia> uconvert(u"ly", 1u"pc")
 
 ## Magnitudes
 
-|                          Name |              Binding |                Zero Point |
-|-------------------------------|----------------------|---------------------------|
+|                          Name |                Binding |              Zero Point |
+|-------------------------------|------------------------|-------------------------|
 | absolute bolometric Magnitude | `UnitfulAstro.bol_Mag` | `3.0128e28 W`           |
 | apparent bolometric magnitude | `UnitfulAstro.bol_mag` | `2.518021002e-8 W m^-2` |
 |                  AB magnitude | `UnitfulAstro.AB_mag`  | `3631 Jy`               |
@@ -78,7 +78,7 @@ julia> uconvert(u"ly", 1u"pc")
 
 
 
-!!! warn
+!!! warning
     Support for magnitudes is experimental. Please use care and report any issues you experience on
     the [UnitfulAstro.jl GitHub issue
     tracker](https://github.com/JuliaAstro/UnitfulAstro.jl/issues).
