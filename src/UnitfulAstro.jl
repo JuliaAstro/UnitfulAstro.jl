@@ -57,7 +57,7 @@ It is intended to represent the mean distance between the Earth and the Sun.
 \nThe light-year, a unit of distance, defined as 1 c⋅yr (speed of light times year).
 It is intended to represent the amount of distance traveled by an object traveling at the speed of light (e.g., a photon) in a year.
 \nDimesion: `𝐋`
-\nSee also: [`c` (speed of light)](@extref Unitful SpeedOfLight), [`yr`](@extref Unitful Year)"
+\nSee also: [`c` (speed of light)](@extref Unitful.c), [`yr`](@extref Unitful.yr)"
 @unit ly         "ly"       LightYear                 1*c*yr                    false
 "    UnitfulAstro.pc
 \nThe parsec, a unit of distance, defined as 1 AU/arcsecond, in IAU 2015.
@@ -100,14 +100,14 @@ It is intended to represent the total power emitted by the sun.
 \nThe solar mass parameter. It is defined as 1.3271244 × 10^20 m^3 s^-2.
 It is intended to represent the product of G (the universal gravitational constant) and Msun (the solar mass).
 \nDimension: `𝐋^3 𝐓^-2`
-\nSee also: [`G`](@extref Unitful), [`Msun`](@ref)
+\nSee also: [`G`](@extref Unitful.G), [`Msun`](@ref)
 \nReference: [IAU 2015 Resolution B3](@cite IAUresolution2015B3)"
 @unit GMsun      "GM⊙"      GSolarMass                1.327_124_4e20*m^3*s^-2   false
 "    UnitfulAstro.Msun
 \nThe solar mass, a unit of mass. It is defined as 1 GMsun/G. It is approximately equal to 1.988 × 10^30 kg.
 It is intended to represent the entire mass of the Sun.
 \nDimension: `𝐌`
-\nSee also: [`G`](@extref Unitful), [`GMsun`](@ref)
+\nSee also: [`G`](@extref Unitful.G), [`GMsun`](@ref)
 \nReference: [IAU 2015 Resolution B3](@cite IAUresolution2015B3)"
 @unit Msun       "M⊙"       SolarMass                 1*GMsun/G                 false
 
@@ -144,27 +144,27 @@ It is intended to represent the distance from Jupiter's center to its equator.
 \nThe terrestrial mass parameter. It is defined as 3.986 004 × 10^14 m^3 s^-2.
 It is intended to represent the product of G (the universal gravitational constant) and Mearth (the terrestrial mass).
 \nDimension: `𝐋^3 𝐓^-2`
-\nSee also: [`G`](@extref Unitful), [`Mearth`](@ref)
+\nSee also: [`G`](@extref Unitful.G), [`Mearth`](@ref)
 \nReference: [IAU 2015 Resolution B3](@cite IAUresolution2015B3)"
 @unit GMearth    "GM⊕"      GEarthMass                3.986_004e14*m^3*s^-2     false
 "    UnitfulAstro.GMjup
 \nThe jovian mass parameter. It is defined as 1.266 8653 × 10^17 m^3 s^-2.
 It is intended to represent the product of G (the universal gravitational constant) and Mjup (the jovian mass).
 \nDimension: `𝐋^3 𝐓^-2`
-\nSee also: [`G`](@extref Unitful), [`Mjup`](@ref)
+\nSee also: [`G`](@extref Unitful.G), [`Mjup`](@ref)
 \nReference: [IAU 2015 Resolution B3](@cite IAUresolution2015B3)"
 @unit GMjup      "GMjup"    GJupiterMass              1.266_865_3e17*m^3*s^-2   false
 "    UnitfulAstro.Mearth
 \nThe terrestrial mass, a unit of mass. It is defined as 1 GMearth/G. It is approximately 5.972 × 10^24 kg.
 It is intended to represent the total mass of the Earth.
 \nDimension: `𝐌`
-\nSee also: [`G`](@extref Unitful), [`GMearth`](@ref)"
+\nSee also: [`G`](@extref Unitful.G), [`GMearth`](@ref)"
 @unit Mearth     "M⊕"       EarthMass                 1*GMearth/G               false
 "    UnitfulAstro.Mjup
 \nThe jovian mass, a unit of mass. It is defined as 1 GMjup/G. It is approximately 1.898 × 10^27 kg.
 It is intended to represent the total mass of Jupiter .
 \nDimension: `𝐌`
-\nSee also: [`G`](@extref Unitful), [`GMjup`](@ref)"
+\nSee also: [`G`](@extref Unitful.G), [`GMjup`](@ref)"
 @unit Mjup       "Mjup"     JupiterMass               1*GMjup/G                 false
 "    UnitfulAstro.Rearth
 \nThe terrestrial radius, a unit of length. It is defined as 1 equatorial Earth radius.
